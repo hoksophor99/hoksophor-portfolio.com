@@ -107,7 +107,7 @@ const ContactMe = () => {
             style={{ width: "60px", height: "60px" }}
           ></lord-icon>
         </motion.div>
-        <p>Aura@gmail.com</p>
+        <p>hoksophor99@gmail.com</p>
       </motion.div>
 
       {/* PHONE */}
@@ -141,7 +141,7 @@ const ContactMe = () => {
             style={{ width: "60px", height: "60px" }}
           ></lord-icon>
         </motion.div>
-        <p>linkedin.com/in/aura</p>
+        <p>linkedin.com/in/hok-sophor-887992387</p>
       </motion.div>
 
       {/* GITHUB */}
@@ -158,7 +158,7 @@ const ContactMe = () => {
             style={{ width: "60px", height: "60px" }}
           ></lord-icon>
         </motion.div>
-        <p>github.com/aura</p>
+        <p>github.com/hoksophor99</p>
       </motion.div>
     </motion.div>
   </motion.section>
