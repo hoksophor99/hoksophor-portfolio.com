@@ -1,0 +1,24 @@
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+@font-face {
+  font-family: Playfair ;
+  src: url("../src/assets/PlayfairDisplay-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Playfair-bold ;
+  src: url("/src/assets/fonts/PlayfairDisplay-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: Poppins;
+  src: url("../src/assets/fonts/Poppins-Regular.ttf");
+  font-weight: 400;
+}
+@theme {
+  --font-Playfair: "Playfair", serif;
+  --font-Poppins: "Poppins", sans-serif;
+  --font-Playfair-bold:"Playfair-bold", sans-serif;
+}
