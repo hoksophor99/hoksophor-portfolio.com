@@ -177,7 +177,7 @@ const AboutMe = () => {
                       >
                         <h5 className="mt-10 text-2xl font-semibold text-white">Technologies</h5>
                         <ul className="mt-5 space-y-4">
-                          {["React.js","JavaScript","Bootstrap", "ailwind CSS", "MySQL", "Postman", "Git", "GitLab"].map((t) => (
+                          {["React.js","JavaScript","Bootstrap", "ailwind CSS", "MySQL", "Postman", "Git", "GitHub"].map((t) => (
                             <li key={t} className="flex items-center gap-3 text-white/70">
                               <span className="w-2 h-2 rounded-full bg-white/35" />
                               <span className="leading-relaxed">{t}</span>

@@ -67,7 +67,7 @@ const Portfolio = () => {
               whileHover={{ scale: 1.03 }}
               className="rounded-2xl overflow-hidden"
             >
-              <div className="relative w-full aspect-[16/9] group rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative w-full aspect-auto md:aspect-[16/9] group rounded-2xl overflow-hidden shadow-xl">
                 
                 {/* IMAGE */}
                 <img
@@ -78,12 +78,12 @@ const Portfolio = () => {
 
                 {/* OVERLAY */}
                 <div className="
-                  absolute inset-0 
-                  flex flex-col justify-center gap-4 px-8 py-6 text-white 
-                  translate-y-full opacity-0
-                  group-hover:translate-y-0 group-hover:opacity-100
-                  transition-all duration-750 ease-out
-                  bg-[#102026b0]
+                  relative flex flex-col gap-4 px-6 py-6 text-white bg-[#102026]
+                  md:absolute md:inset-0 md:justify-center md:px-8
+                  md:translate-y-full md:opacity-0
+                  md:group-hover:translate-y-0 md:group-hover:opacity-100
+                  md:transition-all md:duration-700 md:ease-out
+                  md:bg-[#102026b0]
                 ">
                   <h3 className="text-2xl font-semibold">{project.title}</h3>
 
@@ -111,7 +111,7 @@ const Portfolio = () => {
                       View UI →
                     </button>
                   )}
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap gap-3">
 
                     {/* FRONT-END BUTTONS */}
                     {project.category === "front-end" && (
@@ -124,13 +124,13 @@ const Portfolio = () => {
                           Live Demo
                         </a>
 
-                        {project.gitlab && (
+                        {project.github && (
                           <a
-                            href={project.gitlab}
+                            href={project.github}
                             target="_blank"
                             className="border border-[#ADE7FF] text-white py-2 px-5 rounded-full hover:bg-[#ADE7FF] hover:scale-110 transition-all"
                           >
-                            GitLab
+                            GitHub
                           </a>
                         )}
                       </>
