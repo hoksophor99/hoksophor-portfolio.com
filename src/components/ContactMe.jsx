@@ -1,9 +1,33 @@
 import React from 'react'
-import { Mail, Phone, Linkedin, Github } from "lucide-react";
 import Particles from './Particles'
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-
+ 
+const contactItems = [
+  {
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=hoksophor99@gmail.com",
+    label: "hoksophor99@gmail.com",
+    icon: "https://cdn.lordicon.com/rhvddzym.json",
+    colors: "primary:#ffffff,secondary:#ade7ff",
+  },
+  {
+    href: "tel:+855962600752",
+    label: "+855 962600752",
+    icon: "https://cdn.lordicon.com/nnzfcuqw.json",
+    colors: "primary:#ffffff,secondary:#ffffff",
+  },
+  {
+    href: "https://www.linkedin.com/in/hok-sophor-887992387/",
+    label: "linkedin.com/in/hok-sophor-887992387",
+    icon: "https://cdn.lordicon.com/qgebwute.json",
+    colors: "primary:#ffffff,secondary:#ffffff",
+  },
+  {
+    href: "https://github.com/hoksophor99",
+    label: "github.com/hoksophor99",
+    icon: "https://cdn.lordicon.com/jjxzcivr.json",
+    colors: "primary:#ffffff,secondary:#ffffff",
+  },
+];
 
 const ContactMe = () => {
   return (
@@ -21,7 +45,7 @@ const ContactMe = () => {
     <h2 className="text-4xl font-Playfair text-center mb-14">Contact Me</h2>
 
     {/* Contact Me */}
-    <div className="max-w-2xl mx-auto mb-10">
+    {/* <div className="max-w-2xl mx-auto mb-10">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -82,7 +106,7 @@ const ContactMe = () => {
           </button>
         </form>
       </motion.div>
-    </div>
+    </div> */}
 
 
     {/* icons grid */}
@@ -93,73 +117,27 @@ const ContactMe = () => {
       viewport={{ once: true }}
       variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
     >
-      {/* EMAIL */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
-        whileHover={{ scale: 1.08 }}
-        className="flex flex-col items-center gap-2 cursor-pointer"
-      >
-        <motion.div whileHover={{ scale: 1.2, rotate: 5 }}>
-          <lord-icon
-            src="https://cdn.lordicon.com/rhvddzym.json"
-            trigger="hover"
-            colors="primary:#ffffff,secondary:#ade7ff"
-            style={{ width: "60px", height: "60px" }}
-          ></lord-icon>
-        </motion.div>
-        <p>hoksophor99@gmail.com</p>
-      </motion.div>
-
-      {/* PHONE */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
-        whileHover={{ scale: 1.08 }}
-        className="flex flex-col items-center gap-2 cursor-pointer"
-      >
-        <motion.div whileHover={{ scale: 1.2, rotate: 5 }}>
-          <lord-icon
-            src="https://cdn.lordicon.com/nnzfcuqw.json"
-            trigger="hover"
-            colors="primary:#ffffff,secondary:#ffffff"
-            style={{ width: "60px", height: "60px" }}
-          ></lord-icon>
-        </motion.div>
-        <p>+855 962600752</p>
-      </motion.div>
-
-      {/* LINKEDIN */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
-        whileHover={{ scale: 1.08 }}
-        className="flex flex-col items-center gap-2 cursor-pointer"
-      >
-        <motion.div whileHover={{ scale: 1.2, rotate: 5 }}>
-          <lord-icon
-            src="https://cdn.lordicon.com/qgebwute.json"
-            trigger="hover"
-            colors="primary:#ffffff,secondary:#ffffff"
-            style={{ width: "60px", height: "60px" }}
-          ></lord-icon>
-        </motion.div>
-        <p>linkedin.com/in/hok-sophor-887992387</p>
-      </motion.div>
-
-      {/* GITHUB */}
-      <motion.div
-        variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
-        whileHover={{ scale: 1.08 }}
-        className="flex flex-col items-center gap-2 cursor-pointer"
-      >
-        <motion.div whileHover={{ scale: 1.2, rotate: 5 }}>
-          <lord-icon
-            src="https://cdn.lordicon.com/jjxzcivr.json"
-            trigger="hover"
-            colors="primary:#ffffff,secondary:#ffffff"
-            style={{ width: "60px", height: "60px" }}
-          ></lord-icon>
-        </motion.div>
-        <p>github.com/hoksophor99</p>
-      </motion.div>
+      {contactItems.map((item) => (
+        <motion.a
+          key={item.href}
+          href={item.href}
+          variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
+          whileHover={{ scale: 1.08 }}
+          className="flex flex-col items-center gap-2 cursor-pointer"
+          target={item.href.startsWith("http") ? "_blank" : undefined}
+          rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+        >
+          <motion.div whileHover={{ scale: 1.2, rotate: 5 }}>
+            <lord-icon
+              src={item.icon}
+              trigger="hover"
+              colors={item.colors}
+              style={{ width: "60px", height: "60px" }}
+            ></lord-icon>
+          </motion.div>
+          <p>{item.label}</p>
+        </motion.a>
+      ))}
     </motion.div>
   </motion.section>
 
